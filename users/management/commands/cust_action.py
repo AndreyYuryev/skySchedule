@@ -20,6 +20,7 @@ class Command(BaseCommand):
             "paid_lesson": lesson1,
             "payment_date": "2024-01-15",
             "amount": "100.00",
+            "payment_type": 2,
         },
             {
                 "pk": 2,
@@ -34,7 +35,16 @@ class Command(BaseCommand):
                 "paid_course": course2,
                 "payment_date": "2024-01-25",
                 "amount": "401.00",
-            }, ]
+            },
+            {
+                "pk": 4,
+                "user": user1,
+                "paid_course": course2,
+                "payment_date": "2024-02-01",
+                "amount": "421.00",
+                "payment_type": 2,
+            },
+        ]
         # for item in category_list:
         #     Category.objects.create(**item)
         payments = []

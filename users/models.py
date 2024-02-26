@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from lms.utils import NULLABLE
+from lms.utils import NULLABLE, PAYMENT_TYPE
 from lms.models import Lesson, Course
 
 
@@ -28,6 +28,7 @@ class Payment(models.Model):
     paid_course = models.ForeignKey(Course, on_delete=models.CASCADE, **NULLABLE)
     payment_date = models.DateField(verbose_name='дата оплаты')
     amount = models.DecimalField(decimal_places=2, max_digits=16)
+    payment_type = models.CharField(max_length=1, choices=PAYMENT_TYPE, default=1, verbose_name='тип платежа')
 
     class Meta:
         verbose_name = 'Платеж'
