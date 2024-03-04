@@ -49,12 +49,6 @@ class UserSerializer(serializers.ModelSerializer):
     #     pass
 
 
-class UserUpdateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'password', ]
-
-
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payment
