@@ -1,0 +1,1185 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "users",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "main",
+      "model": "lesson"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "main",
+      "model": "course"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "lms",
+      "model": "lesson"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "lms",
+      "model": "course"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "users",
+      "model": "payment"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "pn07p1bz89tj6new0e6z9cn5x3rn4oya",
+    "fields": {
+      "session_data": ".eJxVjMsOwiAQRf-FtSE8CohL9_0GMsMwUjU0Ke3K-O_apAvd3nPOfYkE21rT1suSJhIXocXpd0PIj9J2QHdot1nmua3LhHJX5EG7HGcqz-vh_h1U6PVblzMZcprRlpjRcEC2Cljr7DgGHpB9CFF78l4RDAZ9tqAccbGRPVrx_gAMEjjK:1rguMg:bZ3CLEA4hZYEvT92rw12bPpa5AAuq3-kow0ltVOiJTM",
+      "expire_date": "2024-03-17T22:31:26.106Z"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": [
+        "admin",
+        "logentry"
+      ],
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": [
+        "auth",
+        "permission"
+      ],
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": [
+        "contenttypes",
+        "contenttype"
+      ],
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": [
+        "sessions",
+        "session"
+      ],
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add ������������",
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change ������������",
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete ������������",
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view ������������",
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add ����",
+      "content_type": [
+        "main",
+        "lesson"
+      ],
+      "codename": "add_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change ����",
+      "content_type": [
+        "main",
+        "lesson"
+      ],
+      "codename": "change_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete ����",
+      "content_type": [
+        "main",
+        "lesson"
+      ],
+      "codename": "delete_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view ����",
+      "content_type": [
+        "main",
+        "lesson"
+      ],
+      "codename": "view_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add ����",
+      "content_type": [
+        "main",
+        "course"
+      ],
+      "codename": "add_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change ����",
+      "content_type": [
+        "main",
+        "course"
+      ],
+      "codename": "change_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete ����",
+      "content_type": [
+        "main",
+        "course"
+      ],
+      "codename": "delete_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view ����",
+      "content_type": [
+        "main",
+        "course"
+      ],
+      "codename": "view_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add ����",
+      "content_type": [
+        "lms",
+        "lesson"
+      ],
+      "codename": "add_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change ����",
+      "content_type": [
+        "lms",
+        "lesson"
+      ],
+      "codename": "change_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete ����",
+      "content_type": [
+        "lms",
+        "lesson"
+      ],
+      "codename": "delete_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view ����",
+      "content_type": [
+        "lms",
+        "lesson"
+      ],
+      "codename": "view_lesson"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add ����",
+      "content_type": [
+        "lms",
+        "course"
+      ],
+      "codename": "add_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change ����",
+      "content_type": [
+        "lms",
+        "course"
+      ],
+      "codename": "change_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete ����",
+      "content_type": [
+        "lms",
+        "course"
+      ],
+      "codename": "delete_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view ����",
+      "content_type": [
+        "lms",
+        "course"
+      ],
+      "codename": "view_course"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add ������",
+      "content_type": [
+        "users",
+        "payment"
+      ],
+      "codename": "add_payment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change ������",
+      "content_type": [
+        "users",
+        "payment"
+      ],
+      "codename": "change_payment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete ������",
+      "content_type": [
+        "users",
+        "payment"
+      ],
+      "codename": "delete_payment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view ������",
+      "content_type": [
+        "users",
+        "payment"
+      ],
+      "codename": "view_payment"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "moderator",
+      "permissions": [
+        [
+          "change_course",
+          "lms",
+          "course"
+        ],
+        [
+          "view_course",
+          "lms",
+          "course"
+        ],
+        [
+          "change_lesson",
+          "lms",
+          "lesson"
+        ],
+        [
+          "view_lesson",
+          "lms",
+          "lesson"
+        ],
+        [
+          "change_course",
+          "main",
+          "course"
+        ],
+        [
+          "view_course",
+          "main",
+          "course"
+        ],
+        [
+          "change_lesson",
+          "main",
+          "lesson"
+        ],
+        [
+          "view_lesson",
+          "main",
+          "lesson"
+        ]
+      ]
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$9t3fo2AK1OG8Ko8JtUWlcN$3umaiImuJojcCU8wgztJXgKi7620OP2PrwtJkDD0JiE=",
+      "last_login": "2024-03-03T22:31:26.102Z",
+      "is_superuser": true,
+      "first_name": "admin",
+      "last_name": "skypro",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-02-23T13:23:51.923Z",
+      "email": "admin@sky.pro",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$GVGv6Px1uYbEC46CWJy1zi$g372oChGRKnni/cMqGqIsdmxXldC4DnUYUV5vcwrnco=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "user1",
+      "last_name": "skypro_moderator",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-02-25T17:13:13Z",
+      "email": "user1@sky.pro",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [
+        [
+          "moderator"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$AD2xAjawHleTMFhS9ftXrq$Fee7JkIFcBq73XqqniO8LN1XMSHosDA7uY3SiMa1IJ4=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "user2",
+      "last_name": "skypro",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-02-25T17:13:24.796Z",
+      "email": "user2@sky.pro",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 25,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$Z4MbXoeHi9kMBFzSnRHjhI$KoK0IFyIGEpVXIiwuNAnMwca4kzZfCwOfFUubKCOd/k=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "user3",
+      "last_name": "skypro",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-03-04T20:25:19.234Z",
+      "email": "user3@sky.pro",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": [
+        "user1@sky.pro"
+      ],
+      "paid_lesson": 1,
+      "paid_course": null,
+      "payment_date": "2024-01-15",
+      "amount": "100.00",
+      "payment_type": "2"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": [
+        "user1@sky.pro"
+      ],
+      "paid_lesson": 5,
+      "paid_course": null,
+      "payment_date": "2024-01-25",
+      "amount": "107.00",
+      "payment_type": "1"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": [
+        "user2@sky.pro"
+      ],
+      "paid_lesson": null,
+      "paid_course": 2,
+      "payment_date": "2024-01-25",
+      "amount": "401.00",
+      "payment_type": "1"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 4,
+    "fields": {
+      "user": [
+        "user1@sky.pro"
+      ],
+      "paid_lesson": null,
+      "paid_course": 2,
+      "payment_date": "2024-02-01",
+      "amount": "421.00",
+      "payment_type": "2"
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 2,
+    "fields": {
+      "title": "�������",
+      "description": "���� �������",
+      "preview": "",
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 3,
+    "fields": {
+      "title": "����������",
+      "description": "���� ����������� �����",
+      "preview": "",
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 4,
+    "fields": {
+      "title": "���������",
+      "description": "���� ������������� ���������",
+      "preview": "",
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 5,
+    "fields": {
+      "title": "�����2222",
+      "description": "���� �����2",
+      "preview": "",
+      "owner": [
+        "user2@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 6,
+    "fields": {
+      "title": "��������� 3",
+      "description": "���� ��������� 3",
+      "preview": "",
+      "owner": [
+        "user2@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 7,
+    "fields": {
+      "title": "��������� 4",
+      "description": "���� ��������� 4",
+      "preview": "",
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 9,
+    "fields": {
+      "title": "����������",
+      "description": "���� ����������",
+      "preview": "",
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 1,
+    "fields": {
+      "title": "����",
+      "description": "���� ��������� ���� ��������",
+      "preview": "",
+      "course": 2,
+      "video_link": null,
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 3,
+    "fields": {
+      "title": "������",
+      "description": "���� ��������� ������",
+      "preview": "",
+      "course": 2,
+      "video_link": null,
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 4,
+    "fields": {
+      "title": "������",
+      "description": "���� ��������� ������",
+      "preview": "",
+      "course": 2,
+      "video_link": null,
+      "owner": [
+        "user2@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 5,
+    "fields": {
+      "title": "�����������",
+      "description": "����������� � ����������",
+      "preview": "",
+      "course": 3,
+      "video_link": null,
+      "owner": [
+        "user2@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 7,
+    "fields": {
+      "title": "������ ZZ",
+      "description": "������ � ����������",
+      "preview": "",
+      "course": 3,
+      "video_link": null,
+      "owner": [
+        "user1@sky.pro"
+      ]
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-03-01T21:39:00.712Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "17",
+      "object_repr": "user6@sky.pro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-03-02T22:06:48.270Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "23",
+      "object_repr": "user77@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-03-02T22:10:40.508Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "24",
+      "object_repr": "user771@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-03-02T22:18:47.632Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "22",
+      "object_repr": "user7@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-03-02T22:18:54.418Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "23",
+      "object_repr": "user77@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-03-02T22:19:00.404Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "24",
+      "object_repr": "user771@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-03-04T15:36:16.585Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "auth",
+        "group"
+      ],
+      "object_id": "1",
+      "object_repr": "moderator",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-03-04T15:44:52.601Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "user1@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\", \"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-03-04T20:21:29.299Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "24",
+      "object_repr": "user771@sky.pro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-03-04T20:21:29.306Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "23",
+      "object_repr": "user77@sky.pro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-03-04T20:21:29.308Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "22",
+      "object_repr": "user7@sky.pro",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-03-04T20:21:52.326Z",
+      "user": [
+        "admin@sky.pro"
+      ],
+      "content_type": [
+        "users",
+        "user"
+      ],
+      "object_id": "2",
+      "object_repr": "user1@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Last name\", \"Staff status\"]}}]"
+    }
+  }
+]
