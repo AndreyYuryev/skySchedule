@@ -3,6 +3,7 @@ from lms.models import Lesson, Course
 
 
 class LessonSerializer(serializers.ModelSerializer):
+    owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
     class Meta:
         model = Lesson
         fields = '__all__'
@@ -10,15 +11,14 @@ class LessonSerializer(serializers.ModelSerializer):
 
 class CourseSerializer(serializers.ModelSerializer):
     lesson_counter = serializers.SerializerMethodField()
-    # lesson = LessonSerializer(source='lesson_set', many=True, read_only=True)
     lesson = LessonSerializer(many=True, read_only=True)
+    owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = Course
-        fields = ['title', 'description', 'preview', 'lesson_counter', 'lesson',]
+        fields = ['title', 'description', 'preview', 'lesson_counter', 'lesson', 'owner',]
 
     def get_lesson_counter(self, instance):
-        # return instance.lesson_set.count()
         return instance.lesson.count()
 
 
