@@ -54,10 +54,10 @@ class PaymentListAPIView(generics.ListAPIView):
     filterset_fields = ['paid_course', 'paid_lesson', 'payment_type', ]
     # search_fields = ['field1', 'field2']
     ordering_fields = ['payment_date']
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [IsAuthenticated, IsOwner]
 
 
 class UserPaymentRetrieveAPIView(generics.RetrieveAPIView):
     serializer_class = UserPaymentSerializer
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [IsAuthenticated, IsOwner]
