@@ -8,7 +8,7 @@ from lms.permissions import IsModerator, IsOwner
 
 class CourseViewSet(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
-    queryset = Course.objects.all()
+    # queryset = Course.objects.all()
 
     def get_permissions(self):
         if (self.action == 'list' or self.action == 'retrieve'
@@ -20,6 +20,12 @@ class CourseViewSet(viewsets.ModelViewSet):
             permission_classes = [IsAuthenticated, IsOwner]
         return [permission() for permission in permission_classes]
 
+
+    def get_queryset(self):
+        if self.action == 'list':
+            return Course.objects.filter(owner=self.request.user)
+        else:
+            return Course.objects.all()
 
 class LessonCreateAPIView(generics.CreateAPIView):
     serializer_class = LessonSerializer
@@ -39,8 +45,11 @@ class LessonRetriveAPIView(generics.RetrieveAPIView):
 
 class LessonListAPIView(generics.ListAPIView):
     serializer_class = LessonSerializer
-    queryset = Lesson.objects.all()
+    # queryset = Lesson.objects.all()
     permission_classes = [IsAuthenticated, IsModerator | IsOwner]
+
+    def get_queryset(self):
+        return Lesson.objects.filter(owner=self.request.user)
 
 
 class LessonUpdateAPIView(generics.UpdateAPIView):
