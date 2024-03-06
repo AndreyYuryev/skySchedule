@@ -49,8 +49,9 @@ class LessonListAPIView(generics.ListAPIView):
     permission_classes = [IsAuthenticated, IsModerator | IsOwner]
 
     def get_queryset(self):
-        return Lesson.objects.filter(owner=self.request.user)
-
+        if not self.request.user.groups.filter(name='moderator').exists():
+            return Lesson.objects.filter(owner=self.request.user)
+        return Lesson.objects.all()
 
 class LessonUpdateAPIView(generics.UpdateAPIView):
     serializer_class = LessonSerializer

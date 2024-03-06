@@ -6,7 +6,7 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
-from lms.permissions import IsOwner
+from lms.permissions import IsOwner, IsCurrentUser
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -19,7 +19,7 @@ class UserViewSet(viewsets.ModelViewSet):
         elif self.action == 'create':
             permission_classes = [AllowAny, ]
         else:
-            permission_classes = [IsAuthenticated, IsAdminUser ]
+            permission_classes = [IsAuthenticated, IsCurrentUser | IsAdminUser ]
         return [permission() for permission in permission_classes]
 
     def perform_create(self, serializer):

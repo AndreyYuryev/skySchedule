@@ -10,6 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'password': {'write_only': True}
         }
+        read_only_fields = [
+            'is_staff', 'is_superuser', 'is_active', 'date_joined',
+            'last_login', 'groups', 'user_permissions',
+        ]
 
 
 class PaymentSerializer(serializers.ModelSerializer):
