@@ -3,7 +3,9 @@ from lms.apps import LmsConfig
 from rest_framework.routers import DefaultRouter
 from lms.views import (CourseViewSet, LessonListAPIView,
                        LessonCreateAPIView, LessonUpdateAPIView,
-                       LessonDestroyAPIView, LessonRetriveAPIView)
+                       LessonDestroyAPIView, LessonRetriveAPIView,
+                       SubscriptionListAPIView, SubscriptionCreateAPIView,
+                       SubscriptionDestroyAPIView)
 
 app_name = LmsConfig.name
 
@@ -16,4 +18,8 @@ urlpatterns = [
                   path('lesson/', LessonListAPIView.as_view(), name='lesson_list'),
                   path('lesson/update/<int:pk>/', LessonUpdateAPIView.as_view(), name='lesson_update'),
                   path('lesson/<int:pk>/', LessonRetriveAPIView.as_view(), name='lesson_retrive'),
+                  path('subscription/', SubscriptionListAPIView.as_view(), name='subscription_list'),
+                  path('subscription/create/', SubscriptionCreateAPIView.as_view(), name='subscription_create'),
+                  path('subscription/delete/<int:pk>/', SubscriptionDestroyAPIView.as_view(),
+                       name='subscription_delete'),
               ] + router.urls
