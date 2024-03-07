@@ -3,7 +3,8 @@ from rest_framework import viewsets, generics
 from rest_framework.permissions import IsAuthenticated
 from lms.serializer import LessonSerializer, CourseSerializer
 from lms.models import Lesson, Course
-from lms.permissions import IsModerator, IsOwner
+from lms.permissions import IsOwner
+from users.permissions import IsModerator
 
 
 class CourseViewSet(viewsets.ModelViewSet):
