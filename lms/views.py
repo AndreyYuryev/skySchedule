@@ -5,11 +5,13 @@ from lms.serializer import LessonSerializer, CourseSerializer
 from lms.models import Lesson, Course
 from lms.permissions import IsOwner
 from users.permissions import IsModerator
+from lms.paginators import LessonPaginator, CoursePaginator
 
 
 class CourseViewSet(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
     # queryset = Course.objects.all()
+    pagination_class = CoursePaginator
 
     def get_permissions(self):
         if (self.action == 'list' or self.action == 'retrieve'
@@ -48,6 +50,7 @@ class LessonListAPIView(generics.ListAPIView):
     serializer_class = LessonSerializer
     # queryset = Lesson.objects.all()
     permission_classes = [IsAuthenticated, IsModerator | IsOwner]
+    pagination_class = LessonPaginator
 
     def get_queryset(self):
         if not self.request.user.groups.filter(name='moderator').exists():
