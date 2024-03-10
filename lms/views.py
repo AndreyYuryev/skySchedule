@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import viewsets, generics
 from rest_framework.permissions import IsAuthenticated
 from lms.serializer import LessonSerializer, CourseSerializer, SubscriptionSerializer
@@ -99,7 +98,6 @@ class SubscriptionDestroyAPIView(generics.DestroyAPIView):
     permission_classes = [IsAuthenticated, ]
 
     def delete(self, request, *args, **kwargs):
-        print(request, kwargs, args)
         subscription_id = kwargs.get('pk')
         subs_items = Subscription.objects.filter(pk=subscription_id)
         if subs_items.exists():

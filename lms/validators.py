@@ -7,7 +7,7 @@ class LinkValidator:
         self.field = field
 
     def __call__(self, value):
-        regex = '^https?:\/\/\S{0,}(youtube.com)+\S{0,}$'
+        regex = r"^https?:\/\/\S{0,}(youtube.com)+\S{0,}$"
         field_value = dict(value).get(self.field)
         if field_value:
             if not bool(re.match(regex, field_value)):

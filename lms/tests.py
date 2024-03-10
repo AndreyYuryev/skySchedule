@@ -1,8 +1,5 @@
-from rest_framework.reverse import reverse
 from rest_framework import status
-from rest_framework.test import APITestCase, APIClient
-from rest_framework.test import force_authenticate
-# from django.contrib.auth.models import User
+from rest_framework.test import APITestCase
 from users.models import User
 from lms.models import Lesson, Course, Subscription
 import json
@@ -63,7 +60,6 @@ class LessonAPITestCase(APITestCase):
 
         self.client.force_authenticate(user=self.user2)
         response = self.client.get(url)
-        print(response.json())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json().get('results'), self.lesson_user2)
         print('get - OK')
@@ -117,25 +113,30 @@ class SubscriptionAPITestCase(APITestCase):
         print('setUp')
         self.user1 = User.objects.create(email='test1@sky.pro', password='123qaz')
         self.user2 = User.objects.create(email='test2@sky.pro', password='123qaz')
-        print(self.user1.pk, self.user2.pk)
         self.client.force_authenticate(user=self.user2)
         self.course = Course.objects.create(title='Course 1', description='Курс Course 1')
         self.post_subscription = {'user_id': self.user2.pk, 'course_id': self.course.pk}
         self.client.force_authenticate(user=self.user1)
         Subscription.objects.create(user_id=self.user1.pk, course_id=self.course.pk)
+        print('setUp - ok')
 
-
+    def tearDown(self):
+        print('tearDown')
+        User.objects.all().delete()
+        Course.objects.all().delete()
+        Subscription.objects.all().delete()
+        print('tearDown - ok')
 
     def test_post(self):
         # Тестирование POST-запроса к API
         print('post')
         url = '/subscription/create/'
-        print('post', self.post_subscription)
         self.client.force_authenticate(user=self.user2)
-        response = self.client.post(url, data=json.dumps(self.post_subscription, indent=4), content_type='application/json')
+        response = self.client.post(url, data=json.dumps(self.post_subscription, indent=4),
+                                    content_type='application/json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json(), {'message': 'подписка добавлена'})
-        print('post - OK')
+        print('post - ok')
 
     def test_delete(self):
         # Тестирование DELETE -запроса к API
@@ -149,6 +150,5 @@ class SubscriptionAPITestCase(APITestCase):
         self.assertEqual(response.json(), {'message': 'подписка удалена'})
         url = '/lesson/'
         response = self.client.get(url)
-        print('resp', response.json())
         self.assertEqual(response.json().get('results'), [])
-        print('delete - OK')
+        print('delete - ok')

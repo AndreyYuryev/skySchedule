@@ -1,7 +1,6 @@
 from django.core.management import BaseCommand
-from users.models import User
-from django.contrib.auth.models import Group
 from django.core.management import call_command
+
 
 class Command(BaseCommand):
     def handle(self, *args, **options):

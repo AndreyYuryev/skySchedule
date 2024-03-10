@@ -1,5 +1,4 @@
 from django.core.management import BaseCommand
-from users.models import User
 from django.contrib.auth.models import Group, Permission
 
 
@@ -28,7 +27,7 @@ class Command(BaseCommand):
         # 36
 
         group_moderator = Group.objects.create(name='moderator1')
-        perm_names =['view_client', 'view_message', "change_stream", "set_active", "set_client", "view_stream",]
+        perm_names = ['view_client', 'view_message', "change_stream", "set_active", "set_client", "view_stream", ]
         permissions = []
         for perm_name in perm_names:
             permission = Permission.objects.get(codename=perm_name)

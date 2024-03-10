@@ -1,12 +1,9 @@
-from django.shortcuts import render
-from rest_framework import viewsets, generics, status
+from rest_framework import viewsets, generics
 from users.serializer import UserSerializer, PaymentSerializer, UserPaymentSerializer
 from users.models import User, Payment
-from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
-from lms.permissions import IsOwner
 from users.permissions import IsCurrentUser
 
 
