@@ -8,7 +8,6 @@ from users.permissions import IsCurrentUser
 from users.services import (create_stripe_product, create_stripe_price,
                             create_stripe_session, get_stripe_session_status)
 from lms.models import Lesson, Course
-from rest_framework.response import Response
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -84,4 +83,3 @@ class PaymentRetrieveAPIView(generics.RetrieveAPIView):
             payment.payment_status = get_stripe_session_status(payment.payment_id)
             payment.save()
         return self.retrieve(request, *args, **kwargs)
-
