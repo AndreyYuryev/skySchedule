@@ -29,4 +29,4 @@ class UserPaymentSerializer(serializers.ModelSerializer):
         fields = ['email', 'first_name', 'last_name', 'payment']
 
     def get_payment(self, instance):
-        return PaymentSerializer(Payment.objects.filter(user=instance.user_id), many=True).data
+        return PaymentSerializer(Payment.objects.filter(user=instance.pk), many=True).data

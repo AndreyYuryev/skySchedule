@@ -26,10 +26,9 @@ class CourseSerializer(serializers.ModelSerializer):
     is_subscribed = serializers.SerializerMethodField(read_only=True)
     owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
-
     class Meta:
         model = Course
-        fields = ['title', 'description', 'preview', 'lesson_counter', 'lesson', 'owner', 'is_subscribed',]
+        fields = ['title', 'description', 'preview', 'lesson_counter', 'lesson', 'owner', 'is_subscribed', ]
 
     def get_lesson_counter(self, instance):
         return instance.lesson.count()
@@ -37,6 +36,6 @@ class CourseSerializer(serializers.ModelSerializer):
     def get_is_subscribed(self, instance):
         user_id = self.context.get('request').user.pk
         course_id = instance.id
-        if Subscription.objects.filter(user_id=user_id,course=course_id):
+        if Subscription.objects.filter(user_id=user_id, course=course_id):
             return 'подписан'
         return 'не подписан'
