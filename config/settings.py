@@ -191,7 +191,7 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BEAT_SCHEDULE = {
     'task-name': {
         'task': 'lms.tasks.deactivate_user',  # Путь к задаче
-        'schedule': timedelta(minutes=2),  # Расписание выполнения задачи (например, каждые 10 минут)
+        'schedule': timedelta(hours=1),  # Расписание выполнения задачи (например, каждые 10 минут)
     },
 }
 
