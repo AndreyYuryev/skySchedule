@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'drf_yasg',
+    'django_celery_beat',
 
     'users',
     'lms',
@@ -187,6 +188,12 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 # CELERY_TASK_SERIALIZER = 'JSON'
 # CELERY_RESULT_SERIALIZER = 'JSON'
+CELERY_BEAT_SCHEDULE = {
+    'task-name': {
+        'task': 'lms.tasks.deactivate_user',  # Путь к задаче
+        'schedule': timedelta(minutes=2),  # Расписание выполнения задачи (например, каждые 10 минут)
+    },
+}
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -197,3 +204,5 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 DEFAULT_RECIPIENT = os.getenv('EMAIL')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
