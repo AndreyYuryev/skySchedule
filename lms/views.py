@@ -7,6 +7,7 @@ from lms.permissions import IsOwner
 from users.permissions import IsModerator
 from lms.paginators import LessonPaginator, CoursePaginator
 from rest_framework.response import Response
+from lms.tasks import inform_by_course_update
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -29,6 +30,11 @@ class CourseViewSet(viewsets.ModelViewSet):
             return Course.objects.filter(owner=self.request.user)
         else:
             return Course.objects.all()
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        inform_by_course_update.delay(course.pk)
+        course.save()
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
