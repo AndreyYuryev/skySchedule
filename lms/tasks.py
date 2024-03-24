@@ -3,8 +3,7 @@ from lms.models import Course, Subscription
 from users.models import User
 from django.core.mail import send_mail
 from django.conf import settings
-from datetime import date, timedelta, datetime
-import re
+from datetime import timedelta, datetime
 
 
 @shared_task
