@@ -20,14 +20,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load data from .env files
 filepath = os.path.join(BASE_DIR, '.env')
+filepath_dk = os.path.join(BASE_DIR, '.env.docker')
 if os.path.exists(filepath):
     load_dotenv(filepath)
+elif os.path.exists(filepath_dk):
+    load_dotenv(filepath_dk)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&v5fi9hs2b^-4ni)-8g(lzvgn4od78(2wg1tt!6(ngje#m-1sl'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,8 +98,8 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB'),  # Название БД
         'USER': os.getenv('POSTGRES_USER'),  # Пользователь для подключения
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),  # Пароль для этого пользователя
-        'HOST': '127.0.0.1',  # Адрес, на котором развернут сервер БД
-        'PORT': 5432,  # Порт, на котором работает сервер БД
+        'HOST': os.getenv('POSTGRES_HOST'),  # Адрес, на котором развернут сервер БД
+        'PORT': os.getenv('POSTGRES_PORT'),  # Порт, на котором работает сервер БД
     }
 }
 
@@ -177,9 +180,9 @@ STRIPE_API_KEY = os.getenv('API_KEY')
 #     }
 
 # URL-адрес брокера сообщений
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379'  # Например, Redis, который по умолчанию работает на порту 6379
+CELERY_BROKER_URL = os.getenv('CELERY_HOST')  # Например, Redis, который по умолчанию работает на порту 6379
 # URL-адрес брокера результатов, также Redis
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = os.getenv('CELERY_HOST')
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = "UTC"
 # Флаг отслеживания выполнения задач
